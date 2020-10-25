@@ -45,6 +45,9 @@ position = Vector2( 32, 48 )
 [node name="Tree2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72, 8 )
 
+[node name="Tree3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 48, 32 )
+
 [node name="Tree4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 280, 40 )
 
