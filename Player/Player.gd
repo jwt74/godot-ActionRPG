@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-const MAX_SPEED = 100
-const ACCELERATION = 500
-const ROLL_SPEED = 125
-const FRICTION = 500
+export(int) var MAX_SPEED = 100
+export(int) var ACCELERATION = 500
+export(int) var ROLL_SPEED = 125
+export(int) var FRICTION = 500
 
 enum {
 	IDLE,
