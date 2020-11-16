@@ -57,7 +57,6 @@ func _on_Hurtbox_area_entered(area):
 	knockback = area.knockback_vector * 120
 	hurtbox.create_hit_effect()
 	
-
 func _on_Stats_no_health():
 	queue_free()
 	createEnemyDeathEffect()
