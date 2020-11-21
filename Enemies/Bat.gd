@@ -6,6 +6,7 @@ export(int) var ACCELERATION = 200
 export(int) var MAX_SPEED = 50
 export(int) var FRICTION = 200
 export(int) var WANDER_TARGET_MARGIN = 4
+export(float) var INVINCIBLE_DURATION = 0.3
 
 enum {
 	IDLE,
@@ -24,6 +25,7 @@ onready var sprite = $AnimatedSprite
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
+onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 
 func _ready():
 	randomize()
@@ -81,10 +83,18 @@ func pick_random_state(state_list):
 	return state_list.pop_front()
 	
 func _on_Hurtbox_area_entered(area):
-	stats.health -= area.damage
-	knockback = area.knockback_vector * 120
-	hurtbox.create_hit_effect()
-	
+	if not hurtbox.invincible:
+		stats.health -= area.damage
+		knockback = area.knockback_vector * 160
+		hurtbox.create_hit_effect()
+		hurtbox.start_invincibility(INVINCIBLE_DURATION)
+		
 func _on_Stats_no_health():
 	queue_free()
 	createEnemyDeathEffect()
+
+func _on_Hurtbox_invincibility_started():
+	blinkAnimationPlayer.play("Start")
+
+func _on_Hurtbox_invincibility_ended():
+	blinkAnimationPlayer.play("Stop")
