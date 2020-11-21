@@ -83,11 +83,10 @@ func pick_random_state(state_list):
 	return state_list.pop_front()
 	
 func _on_Hurtbox_area_entered(area):
-	if not hurtbox.invincible:
-		stats.health -= area.damage
-		knockback = area.knockback_vector * 160
-		hurtbox.create_hit_effect()
-		hurtbox.start_invincibility(INVINCIBLE_DURATION)
+	stats.health -= area.damage
+	knockback = area.knockback_vector * 160
+	hurtbox.create_hit_effect()
+	hurtbox.start_invincibility(INVINCIBLE_DURATION)
 		
 func _on_Stats_no_health():
 	queue_free()

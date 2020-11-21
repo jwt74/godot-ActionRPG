@@ -89,16 +89,14 @@ func roll_animation_finished():
 	state = MOVE
 
 func _on_Hurtbox_area_entered(area):
-	if not hurtbox.invincible:
-		stats.health -= area.damage
-		hurtbox.start_invincibility(INVINCIBLE_DURATION)
-		hurtbox.create_hit_effect()
-		var playerHurtSound = PlayerHurtSound.instance()
-		get_tree().current_scene.add_child(playerHurtSound)
+	stats.health -= area.damage
+	hurtbox.start_invincibility(INVINCIBLE_DURATION)
+	hurtbox.create_hit_effect()
+	var playerHurtSound = PlayerHurtSound.instance()
+	get_tree().current_scene.add_child(playerHurtSound)
 
 func _on_Hurtbox_invincibility_started():
 	blinkAnimationPlayer.play("Start")
 
 func _on_Hurtbox_invincibility_ended():
 	blinkAnimationPlayer.play("Stop")
-
