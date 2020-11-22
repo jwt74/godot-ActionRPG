@@ -11,50 +11,50 @@
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Player/WhiteColor.shader" type="Shader" id=10]
 
-[sub_resource type="ShaderMaterial" id=15]
+[sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
 shader = ExtResource( 10 )
 shader_param/active = false
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 48, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 16, 24 )
 
-[sub_resource type="SpriteFrames" id=21]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Fly",
 "speed": 10.0
 } ]
 
-[sub_resource type="CircleShape2D" id=22]
+[sub_resource type="CircleShape2D" id=8]
 radius = 4.05531
 
-[sub_resource type="CapsuleShape2D" id=23]
+[sub_resource type="CapsuleShape2D" id=9]
 radius = 7.14007
 height = 3.9851
 
-[sub_resource type="CircleShape2D" id=24]
+[sub_resource type="CircleShape2D" id=10]
 radius = 59.0429
 
-[sub_resource type="CircleShape2D" id=25]
+[sub_resource type="CircleShape2D" id=11]
 radius = 3.91303
 
 [sub_resource type="CircleShape2D" id=12]
@@ -99,16 +99,15 @@ collision_layer = 16
 script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = SubResource( 15 )
-frames = SubResource( 21 )
+material = SubResource( 1 )
+frames = SubResource( 7 )
 animation = "Fly"
-frame = 1
 playing = true
 offset = Vector2( 0, -12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 22 )
+shape = SubResource( 8 )
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -119,7 +118,7 @@ collision_layer = 8
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 visible = false
 position = Vector2( 0, -13 )
-shape = SubResource( 23 )
+shape = SubResource( 9 )
 
 [node name="Stats" parent="." instance=ExtResource( 5 )]
 max_health = 2
@@ -128,14 +127,14 @@ max_health = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerDectectionZone"]
 modulate = Color( 1, 1, 1, 0.160784 )
-shape = SubResource( 24 )
+shape = SubResource( 10 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 7 )]
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, -15.2935 )
-shape = SubResource( 25 )
+shape = SubResource( 11 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 8 )]
 

@@ -7,8 +7,8 @@ export(int) var MAX_SPEED = 50
 export(int) var FRICTION = 200
 export(int) var WANDER_TARGET_MARGIN = 4
 export(int) var KNOCKBACK = 160
+export(bool) var WANDERER = true
 export(float) var INVINCIBLE_DURATION = 0.3
-
 
 enum {
 	IDLE,
@@ -43,10 +43,10 @@ func _physics_process(delta):
 	
 	match state:
 		IDLE:
-			seek_player()
 			velocity = velocity.move_toward(Vector2.ZERO, 200 * delta)
 			if wanderController.get_time_left() == 0:
 				reset_state()
+			seek_player()
 
 		WANDER:
 			seek_player()
@@ -68,8 +68,11 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)	
 				
 func reset_state():
-	state = pick_random_state([IDLE, WANDER])
-	wanderController.start_wander_timer(rand_range(1, 3))
+	if WANDERER:
+		state = pick_random_state([IDLE, WANDER])
+		wanderController.start_wander_timer(rand_range(1, 3))
+	else:
+		state = IDLE
 				
 func accelerate_toward_point(target, delta):
 	var direction = global_position.direction_to(target)
@@ -81,9 +84,12 @@ func seek_player():
 		state = CHASE
 		
 func pick_random_state(state_list):
-	state_list.shuffle()
-	return state_list.pop_front()
-	
+	if WANDERER:
+		state_list.shuffle()
+		return state_list.pop_front()
+	else:
+		return IDLE
+			
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	knockback = area.knockback_vector * KNOCKBACK

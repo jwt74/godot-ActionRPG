@@ -48,11 +48,11 @@ animations = [ {
 radius = 4.05531
 
 [sub_resource type="CapsuleShape2D" id=9]
-radius = 7.14007
-height = 3.9851
+radius = 8.17153
+height = 2.1962
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 12.9718
+radius = 28.6511
 
 [sub_resource type="CircleShape2D" id=11]
 radius = 3.91303
@@ -95,35 +95,43 @@ tracks/0/keys = {
 }
 
 [node name="MegaBat" type="KinematicBody2D"]
+scale = Vector2( 4, 4 )
 collision_layer = 16
 script = ExtResource( 1 )
+ACCELERATION = 150
+MAX_SPEED = 60
+WANDER_TARGET_MARGIN = 10
+KNOCKBACK = 150
+INVINCIBLE_DURATION = 1.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 1 )
 frames = SubResource( 7 )
 animation = "Fly"
-frame = 3
+frame = 4
 playing = true
-offset = Vector2( 0, -12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 8 )
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )
+offset = Vector2( 0, 15 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+visible = false
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-visible = false
-position = Vector2( 0, -13 )
+position = Vector2( 0, -2.736 )
 shape = SubResource( 9 )
 
 [node name="Stats" parent="." instance=ExtResource( 7 )]
-max_health = 2
+max_health = 6
 
 [node name="PlayerDectectionZone" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerDectectionZone"]
 modulate = Color( 1, 1, 1, 0.160784 )
@@ -133,10 +141,11 @@ shape = SubResource( 10 )
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 0, -15.2935 )
+position = Vector2( 0, -3 )
 shape = SubResource( 11 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 shape = SubResource( 12 )
