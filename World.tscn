@@ -719,6 +719,9 @@ position = Vector2( 144, 464 )
 [node name="DiamondGrass" parent="HeartGrasses/DiamondGrass5/DiamondGrass/DiamondGrass" instance=ExtResource( 16 )]
 position = Vector2( 176, -192 )
 
+[node name="DiamondGrass2" parent="HeartGrasses/DiamondGrass5/DiamondGrass/DiamondGrass" instance=ExtResource( 16 )]
+position = Vector2( -520, -288 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
