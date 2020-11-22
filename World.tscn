@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Enemies/GrassBat.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Enemies/BabyBat.tscn" type="PackedScene" id=15]
 [ext_resource path="res://World/DiamondGrass.tscn" type="PackedScene" id=16]
+[ext_resource path="res://World/GoldGrass.gd" type="Script" id=17]
+[ext_resource path="res://World/GoldGrass.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -620,9 +622,6 @@ position = Vector2( 104, -72 )
 [node name="GrassBat6" parent="GrassBats" instance=ExtResource( 14 )]
 position = Vector2( 360, 200 )
 
-[node name="DiamondGrass" parent="GrassBats" instance=ExtResource( 16 )]
-position = Vector2( 120, 80 )
-
 [node name="HeartGrasses" type="YSort" parent="."]
 position = Vector2( 70, 257.104 )
 
@@ -695,12 +694,6 @@ position = Vector2( -334, -92.742 )
 [node name="HeartGrass25" parent="HeartGrasses" instance=ExtResource( 11 )]
 position = Vector2( 402, -220.742 )
 
-[node name="DiamondGrass" parent="HeartGrasses" instance=ExtResource( 16 )]
-position = Vector2( 186, -513.104 )
-
-[node name="DiamondGrass2" parent="HeartGrasses" instance=ExtResource( 16 )]
-position = Vector2( 386, -649.104 )
-
 [node name="DiamondGrass3" parent="HeartGrasses" instance=ExtResource( 16 )]
 position = Vector2( 458, -737.104 )
 
@@ -710,17 +703,21 @@ position = Vector2( -294, -465.104 )
 [node name="DiamondGrass5" parent="HeartGrasses" instance=ExtResource( 16 )]
 position = Vector2( -246, -257.104 )
 
-[node name="DiamondGrass" parent="HeartGrasses/DiamondGrass5" instance=ExtResource( 16 )]
-position = Vector2( 448, -496 )
+[node name="DiamondGrass6" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( 202, -753.104 )
 
-[node name="DiamondGrass" parent="HeartGrasses/DiamondGrass5/DiamondGrass" instance=ExtResource( 16 )]
-position = Vector2( 144, 464 )
+[node name="DiamondGrass9" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( -174, -577.104 )
+script = ExtResource( 17 )
 
-[node name="DiamondGrass" parent="HeartGrasses/DiamondGrass5/DiamondGrass/DiamondGrass" instance=ExtResource( 16 )]
-position = Vector2( 176, -192 )
+[node name="DiamondGrass11" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( -174, -577.104 )
 
-[node name="DiamondGrass2" parent="HeartGrasses/DiamondGrass5/DiamondGrass/DiamondGrass" instance=ExtResource( 16 )]
-position = Vector2( -520, -288 )
+[node name="DiamondGrass12" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( 50, -177.104 )
+
+[node name="GoldGrass" parent="HeartGrasses" instance=ExtResource( 18 )]
+position = Vector2( 162, -1.104 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -1596,5 +1593,11 @@ margin_bottom = 19.7798
 
 [node name="MegaBat" parent="." instance=ExtResource( 12 )]
 position = Vector2( 0, -168 )
+
+[node name="DiamondGrass" parent="." instance=ExtResource( 16 )]
+position = Vector2( 584, -216 )
+
+[node name="GoldGrass" parent="DiamondGrass" instance=ExtResource( 18 )]
+position = Vector2( -392, 296 )
 
 [editable path="Camera2D"]
