@@ -695,6 +695,30 @@ position = Vector2( -334, -92.742 )
 [node name="HeartGrass25" parent="HeartGrasses" instance=ExtResource( 11 )]
 position = Vector2( 402, -220.742 )
 
+[node name="DiamondGrass" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( 186, -513.104 )
+
+[node name="DiamondGrass2" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( 386, -649.104 )
+
+[node name="DiamondGrass3" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( 458, -737.104 )
+
+[node name="DiamondGrass4" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( -294, -465.104 )
+
+[node name="DiamondGrass5" parent="HeartGrasses" instance=ExtResource( 16 )]
+position = Vector2( -246, -257.104 )
+
+[node name="DiamondGrass" parent="HeartGrasses/DiamondGrass5" instance=ExtResource( 16 )]
+position = Vector2( 448, -496 )
+
+[node name="DiamondGrass" parent="HeartGrasses/DiamondGrass5/DiamondGrass" instance=ExtResource( 16 )]
+position = Vector2( 144, 464 )
+
+[node name="DiamondGrass" parent="HeartGrasses/DiamondGrass5/DiamondGrass/DiamondGrass" instance=ExtResource( 16 )]
+position = Vector2( 176, -192 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
@@ -1492,7 +1516,7 @@ position = Vector2( -208.873, 90.969 )
 position = Vector2( -190.067, 68.217 )
 
 [node name="Bat69" parent="YSort/Bats" instance=ExtResource( 8 )]
-position = Vector2( -198.986, 48 )
+position = Vector2( -200, 56 )
 
 [node name="Bat70" parent="YSort/Bats" instance=ExtResource( 8 )]
 position = Vector2( -246.389, 68.662 )
