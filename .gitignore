@@ -1,6 +1,8 @@
 # Import cache
 .import/
 
+.tgz
+
 # Binaries
 bin/
 build/
