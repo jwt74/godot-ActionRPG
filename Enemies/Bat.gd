@@ -6,7 +6,9 @@ export(int) var ACCELERATION = 200
 export(int) var MAX_SPEED = 50
 export(int) var FRICTION = 200
 export(int) var WANDER_TARGET_MARGIN = 4
+export(int) var KNOCKBACK = 160
 export(float) var INVINCIBLE_DURATION = 0.3
+
 
 enum {
 	IDLE,
@@ -37,7 +39,7 @@ func createEnemyDeathEffect():
 	
 func _physics_process(delta):
 	move_and_slide(knockback)
-	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
+	knockback = knockback.move_toward(Vector2.ZERO, rand_range(150,250) * delta)
 	
 	match state:
 		IDLE:
@@ -84,7 +86,7 @@ func pick_random_state(state_list):
 	
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 160
+	knockback = area.knockback_vector * KNOCKBACK
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(INVINCIBLE_DURATION)
 		
