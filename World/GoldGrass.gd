@@ -11,5 +11,5 @@ func create_grass_effect():
 func _on_Hurtbox_area_entered(area):
 	create_grass_effect()
 	stats.max_health += 1
-	stats.health = stats.max_health
+#	stats.health = stats.max_health
 	queue_free()
