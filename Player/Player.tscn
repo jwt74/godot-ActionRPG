@@ -8,7 +8,8 @@
 [ext_resource path="res://Shadows/MediumShadow.png" type="Texture" id=6]
 [ext_resource path="res://Music and Sounds/Swipe.wav" type="AudioStream" id=7]
 [ext_resource path="res://Music and Sounds/Evade.wav" type="AudioStream" id=8]
-[ext_resource path="res://Player/WhiteColor.shader" type="Shader" id=9]
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=9]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 9 )

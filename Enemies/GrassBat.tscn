@@ -9,7 +9,7 @@
 [ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Overlap/SoftCollision.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Player/WhiteColor.shader" type="Shader" id=10]
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=10]
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -66,7 +66,7 @@ resource_name = "Start"
 length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Bat/Bat22:material:shader_param/active")
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -83,7 +83,7 @@ resource_name = "Stop"
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Bat/Bat22:material:shader_param/active")
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -104,7 +104,7 @@ WANDERER = false
 material = SubResource( 1 )
 frames = SubResource( 7 )
 animation = "Fly"
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 0, -12 )
 

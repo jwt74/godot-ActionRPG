@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Enemies/Bat.gd" type="Script" id=1]
 [ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player/WhiteColor.shader" type="Shader" id=3]
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=3]
 [ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=5]
 [ext_resource path="res://Enemies/Bat.png" type="Texture" id=6]
@@ -65,7 +65,7 @@ resource_name = "Start"
 length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Bat/Bat22:material:shader_param/active")
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -82,7 +82,7 @@ resource_name = "Stop"
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Bat/Bat22:material:shader_param/active")
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -108,7 +108,7 @@ INVINCIBLE_DURATION = 1.0
 material = SubResource( 1 )
 frames = SubResource( 7 )
 animation = "Fly"
-frame = 4
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -139,6 +139,7 @@ shape = SubResource( 10 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 4 )]
 collision_mask = 4
+damage = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, -3 )
