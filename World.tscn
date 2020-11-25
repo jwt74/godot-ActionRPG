@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://World/GoldGrass.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/WaterTileset.png" type="Texture" id=19]
 [ext_resource path="res://World/DungeonTileset.png" type="Texture" id=20]
+[ext_resource path="res://Enemies/InvertedBat.tscn" type="PackedScene" id=21]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -797,7 +798,7 @@ remote_path = NodePath("../../../Camera2D")
 [node name="Bushes" type="YSort" parent="YSort"]
 
 [node name="Bush" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 48, 104 )
+position = Vector2( 47.9998, 105.682 )
 
 [node name="Bush2" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 48, 80 )
@@ -1353,7 +1354,7 @@ position = Vector2( -56, 216 )
 position = Vector2( -40, 272 )
 
 [node name="TreeBat" parent="YSort/TreeBats" instance=ExtResource( 13 )]
-position = Vector2( -120, -24 )
+position = Vector2( -134.866, -53.4961 )
 
 [node name="Bats" type="YSort" parent="YSort"]
 
@@ -1609,22 +1610,31 @@ position = Vector2( 545.014, -16 )
 [node name="Bat85" parent="YSort/Bats" instance=ExtResource( 8 )]
 position = Vector2( 497.611, 4.66199 )
 
+[node name="Bat22" parent="YSort/Bats" instance=ExtResource( 21 )]
+position = Vector2( -125.034, 256.393 )
+
 [node name="BabyBats" type="YSort" parent="YSort"]
 
 [node name="BabyBat" parent="YSort/BabyBats" instance=ExtResource( 15 )]
-position = Vector2( 272, -120 )
+position = Vector2( -118.5, -277.5 )
 
 [node name="BabyBat2" parent="YSort/BabyBats" instance=ExtResource( 15 )]
-position = Vector2( 56, -208 )
+position = Vector2( -117.5, -249 )
 
 [node name="BabyBat3" parent="YSort/BabyBats" instance=ExtResource( 15 )]
-position = Vector2( -120, -256 )
+position = Vector2( -85, -269.5 )
 
 [node name="BabyBat4" parent="YSort/BabyBats" instance=ExtResource( 15 )]
-position = Vector2( -120, -240 )
+position = Vector2( 65.2696, -218.065 )
 
 [node name="BabyBat5" parent="YSort/BabyBats" instance=ExtResource( 15 )]
-position = Vector2( -104, -256 )
+position = Vector2( 269.034, -126.841 )
+
+[node name="MegaBat" parent="." instance=ExtResource( 12 )]
+position = Vector2( 16.5863, -214.001 )
+
+[node name="MegaBat2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 502.682, 181.482 )
 
 [node name="HealthCanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1633,8 +1643,5 @@ margin_left = 5.35468
 margin_top = 3.77976
 margin_right = 93.3547
 margin_bottom = 19.7798
-
-[node name="MegaBat" parent="." instance=ExtResource( 12 )]
-position = Vector2( 0, -168 )
 
 [editable path="Camera2D"]

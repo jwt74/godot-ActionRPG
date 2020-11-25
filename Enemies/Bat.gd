@@ -38,6 +38,7 @@ func createEnemyDeathEffect():
 	enemyDeathEffect.global_position = global_position
 	
 func _physics_process(delta):
+# warning-ignore:return_value_discarded
 	move_and_slide(knockback)
 	knockback = knockback.move_toward(Vector2.ZERO, rand_range(150,250) * delta)
 	
